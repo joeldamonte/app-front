@@ -1,0 +1,21 @@
+<table class="table table-danger">
+    <thead>
+      <tr>
+        <th scope="col">ID</th> 
+        <th scope="col">Productos</th>
+        <th scope="col">Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of productos; let i = index">
+        <th scope="row">{{p.idProd}}</th>
+        <td>{{p.nombre}}</td>
+        <td>{{p.precio}}</td>
+        <td>
+          <button class="btn btn-danger ml-3" (click)="deleteCarrito(p.idProd,i)">
+            <i class="fas fa-skull-crossbones"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+</table>

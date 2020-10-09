@@ -1,0 +1,30 @@
+<table class="table table-danger">
+    <thead>
+      <tr>
+        <th scope="col">Id</th> 
+        <th scope="col">DNI Cliente</th>
+        <th scope="col">Lista De Productos</th>
+        <th scope="col">Eliminar Carrito</th>
+        <th scope="col">Pagar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of arrCarritos; let i = index">
+        <th scope="row">{{p.idCar}}</th>
+        <td>{{p.nombre}}</td>
+        <td>
+            <button (click)="showProd(p.idCar)">LISTA DE PRODUCTOS</button>
+        </td>
+        <td>
+          <button class="btn btn-danger ml-3" (click)="deleteCarrito(p.idCar,i)">
+            <i class="fas fa-skull-crossbones"></i>
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger ml-3" (click)="pagarCarrito(p.idCar)">
+            <i class="fas fa-skull-crossbones"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+</table>

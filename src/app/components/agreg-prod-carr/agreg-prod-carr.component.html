@@ -1,0 +1,10 @@
+<form [formGroup]="formul" (ngSubmit)="handlerSubmit()">
+    <select class="custom-select mb-3" formControlName="producto">
+        <option value=""></option>
+        <option [ngValue]="item.idProd" *ngFor="let item of productos">{{item.nombre}}</option>
+    </select>
+    <button type="submit" class="btn btn-danger">COMPRAR</button>
+    <pre>
+        {{formul.value.productos | json}}
+    </pre>
+</form>
